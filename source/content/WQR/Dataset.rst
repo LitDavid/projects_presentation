@@ -15,6 +15,7 @@ followed by the radiometric calibration, QUAC and Gram-Schmidt pan-sharpening op
 
 Landsat-8 OLI data pre-processing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Radiometric Calibration converts the origin Digital Number (DN) into radiance pixel values or reflectance
 with the aim of reducing sensor errors.
 https://www.harrisgeospatial.com/docs/RadiometricCalibration.html
@@ -36,6 +37,7 @@ Another way is to call ENVIPyEngine (Envi version >= 5.4) package to do all the 
 
 Monitoring Site Database
 ----------------------------
+
 Generally speaking, the lack of reliable labels (ground truth) is the key issue for the classification task of remote sensing images.
 Luckily, in this case study, the water quality monitoring system provides sufficient and high-accuracy ground truth data starting from 2019-01-01.
 Around 10 water parameter values are being recorded every 4 hours.
@@ -44,16 +46,16 @@ Database also provides the water quality levels according to the GB3838-2002 sta
 Although there are total 2796 monitoring sites in China. As shown in the image:
 
 .. figure:: ./imgs/monitoring_sites.png
-   :width: 550px
-   :align: center
+    :width: 550px
+    :align: center
 
     Monitoring sites
 
 Most of them are installed for monitoring city rivers which can not be recognized by spacial resolution of Landsat8 images.
 
 .. figure:: ./imgs/l8_ms.png
-   :width: 550px
-   :align: center
+    :width: 550px
+    :align: center
 
     Landsat8 image with monitoring sites
 

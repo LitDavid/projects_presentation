@@ -14,12 +14,6 @@ Some Examples:
 
     Night light 201904, NPP data
 
-.. figure:: ./imgs/dust_detection/H8_dust.png
-    :width: 550px
-    :align: center
-
-    Dust detection, H8 data
-
 .. figure:: ./imgs/YS049/20191107_0_YS049_S5NO2.png
     :width: 550px
     :align: center

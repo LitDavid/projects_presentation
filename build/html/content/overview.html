@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>概述 &mdash; Water Quality Retrieval 0.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="数据" href="data.html" />
+    <link rel="prev" title="水质反演项目文档说明" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Water Quality Retrieval
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">概述</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">内部人员使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1. 服务器</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">8209</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2. 环境和权限</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">环境</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">权限</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">3. 路径</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">4. 生成训练数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">5. 训练模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">6. 预测</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">7. 后处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">7. 配置文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="method.html">方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discussion.html">存在的问题</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Water Quality Retrieval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>概述</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/content/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>概述<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>此项目尝试结合卫星与地面水质监测站数据，最终目的是利用卫星数据反演大面积地面水质数据，
+为相关部门和客户提供区域面积内水质情况参考。</p>
+<p>项目还在进行中，此文档会不定时更新。</p>
+<div class="section" id="id2">
+<h2>内部人员使用<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>1. 服务器<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">IP: 10.10.8.209   Port: 22</div>
+</div>
+<div class="section" id="id4">
+<h4>8209<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>服务器设置conda环境</p>
+<ol class="arabic">
+<li><p>enter home index: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code></p></li>
+<li><p>execute: <code class="docutils literal notranslate"><span class="pre">vi</span> <span class="pre">.bashrc</span></code></p></li>
+<li><p>change code by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># .bashrc</span>
+<span class="c1"># Source global definitions</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/bashrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        . /etc/bashrc
+<span class="k">fi</span>
+
+<span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;data/STL_ENV/minicaonda3/bin/conda&#39;</span> <span class="s1">&#39;shell.bash&#39;</span> <span class="s1">&#39;hook&#39;</span> <span class="m">2</span>&gt; /dev/null<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">eval</span> <span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
+<span class="k">else</span>
+    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;/data/STL_ENV/minicaonda3/etc/profile.d/conda.sh&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        . <span class="s2">&quot;/data/STL_ENV/minicaonda3/etc/profile.d/conda.sh&quot;</span>
+    <span class="k">else</span>
+        <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/data/STL_ENV/minicaonda3/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+<span class="nb">unset</span> __conda_setup
+
+<span class="c1"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
+
+<span class="nb">unset</span> ftp_proxy all_proxy
+<span class="c1"># alias</span>
+<span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s2">&quot;ls -h&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>reopen shell</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>2. 环境和权限<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4>环境<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>其中需要的环境包在requirement.txt中</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate DEV_WATER
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h4>权限<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">由于运行代码过程中需要产生中间文件，可能需要联系相关人员开启权限。</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>使用的核心python包: <a class="reference external" href="https://pypi.org/project/GDAL/">gdal</a>,
+<a class="reference external" href="https://pypi.org/project/rasterio/">rasterio</a>,
+<a class="reference external" href="https://pypi.org/project/Fiona/">fiona</a>,
+<a class="reference external" href="https://lightgbm.readthedocs.io/en/latest/">lightgbm</a>,
+<a class="reference external" href="http://scikit-learn.github.io/stable">sklearn</a>,
+<a class="reference external" href="https://keras.io">keras</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>3. 路径<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>/data/liusiyu/TEST_CODE/WATER/</p>
+</div>
+<div class="section" id="id9">
+<h3>4. 生成训练数据<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python generate_datesets.py
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>数据将会以pickle文件格式生成在’pickle’文件夹中</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>5. 训练模型<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python generate_models.py
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>训练好的模型’<a href="#id11"><span class="problematic" id="id12">*</span></a>.m’及其说明文件’readme.txt’将会生成在相对应日期的’model’文件夹中</p>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>6. 预测<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python prediction.py
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>预测的原始图像’<a href="#id14"><span class="problematic" id="id15">*</span></a>.tif’和其相应图像’<a href="#id16"><span class="problematic" id="id17">*</span></a>_render.tif’将会生成与model文件夹名相同的’prediction’中</p>
+</div>
+</div>
+<div class="section" id="id18">
+<h3>7. 后处理<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>预测图像中水质的修改，颜色的改变。</p>
+</div>
+<div class="section" id="id19">
+<h3>7. 配置文件<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>所有需要设置的路径信息都在’config.ini’中修改</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>所有代码将整合在’main.py’中</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data.html" class="btn btn-neutral float-right" title="数据" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="水质反演项目文档说明" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, sil
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

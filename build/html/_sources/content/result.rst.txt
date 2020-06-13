@@ -1,0 +1,28 @@
+结果
+========================
+
+巢湖
+----------------
+.. figure:: /img/chaohu.png
+   :width: 650px
+   :align: center
+
+不同分类器的水质最差模型对巢湖的预测结果。
+
+长江下游流域
+-----------------------
+.. figure:: /img/changjiang.jpg
+   :width: 650px
+   :align: center
+
+利用自己勾画的shp将巢湖和太湖分割并利用最差模型进行预测，其余长江流域利用ALLP模型进行预测。
+
+武汉长江中游
+------------------------
+.. figure:: /img/wuhan.png
+   :width: 650px
+   :align: center
+
+中游流域利用ALLP模型进行预测，并对某些小块湖泊区域的颜色的改变。
+
+

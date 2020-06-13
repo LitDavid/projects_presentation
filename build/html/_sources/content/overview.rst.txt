@@ -1,0 +1,107 @@
+概述
+========================
+
+此项目尝试结合卫星与地面水质监测站数据，最终目的是利用卫星数据反演大面积地面水质数据，
+为相关部门和客户提供区域面积内水质情况参考。
+
+项目还在进行中，此文档会不定时更新。
+
+内部人员使用
+------------------------------------
+1. 服务器
+*******************
+| IP: 10.10.8.209   Port: 22
+
+8209
+^^^^^^^^^^^^^^
+服务器设置conda环境
+
+1. enter home index: ``cd ~``
+#. execute: ``vi .bashrc``
+#. change code by:
+
+   .. code-block:: bash
+      
+      # .bashrc
+      # Source global definitions
+      if [ -f /etc/bashrc ]; then
+              . /etc/bashrc
+      fi
+
+      __conda_setup="$('data/STL_ENV/minicaonda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+      if [ $? -eq 0 ]; then
+          eval "$__conda_setup"
+      else
+          if [ -f "/data/STL_ENV/minicaonda3/etc/profile.d/conda.sh" ]; then
+              . "/data/STL_ENV/minicaonda3/etc/profile.d/conda.sh"
+          else
+              export PATH="/data/STL_ENV/minicaonda3/bin:$PATH"
+          fi
+      fi
+      unset __conda_setup
+
+      # <<< conda initialize <<<
+
+      unset ftp_proxy all_proxy
+      # alias
+      alias ls="ls -h"
+
+#. reopen shell 
+
+2. 环境和权限
+************************
+
+环境
+^^^^^^^^^^^^^^^^^^^
+其中需要的环境包在requirement.txt中
+
+.. code:: bash
+
+   conda activate DEV_WATER
+
+权限
+^^^^^^^^^^^^^^^^
+| 由于运行代码过程中需要产生中间文件，可能需要联系相关人员开启权限。
+.. note:: 使用的核心python包: `gdal <https://pypi.org/project/GDAL/>`_,
+                              `rasterio <https://pypi.org/project/rasterio/>`_, 
+                              `fiona <https://pypi.org/project/Fiona/>`_,
+                              `lightgbm <https://lightgbm.readthedocs.io/en/latest/>`_,
+                              `sklearn <http://scikit-learn.github.io/stable>`_,
+                              `keras <https://keras.io>`_
+
+3. 路径
+************************
+/data/liusiyu/TEST_CODE/WATER/
+
+4. 生成训练数据
+************************
+.. code:: bash
+
+   python generate_datesets.py
+
+.. note:: 数据将会以pickle文件格式生成在'pickle'文件夹中
+
+5. 训练模型
+************************
+.. code:: bash
+
+   python generate_models.py
+.. note:: 训练好的模型'*.m'及其说明文件'readme.txt'将会生成在相对应日期的'model'文件夹中
+
+6. 预测
+************************
+.. code:: bash
+
+   python prediction.py
+.. note:: 预测的原始图像'*.tif'和其相应图像'*_render.tif'将会生成与model文件夹名相同的'prediction'中
+
+7. 后处理
+************************
+预测图像中水质的修改，颜色的改变。
+
+7. 配置文件
+*************************
+所有需要设置的路径信息都在'config.ini'中修改
+
+
+.. attention:: 所有代码将整合在'main.py'中

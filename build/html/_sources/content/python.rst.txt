@@ -1,0 +1,28 @@
+baibaibai
+========================
+
+
+xiedaima
+-----------
+
+8076
+^^^^^^^^^^^^^^
+
+1. enter home index: ``cd ~``
+#. execute: ``vi .bashrc``
+#. add following code in 'vim':
+
+   .. code-block:: bash
+
+      __conda_setup="$('data/minicaonda33/bin/conda')"
+      if []: then
+      else
+
+      unset conda set up 
+
+#. reopen terminal 
+
+* DEV_par: casdlkj
+	* **donwload basedir**: lfciast
+
+.. attention:: red alert

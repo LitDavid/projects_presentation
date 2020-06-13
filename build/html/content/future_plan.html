@@ -1,0 +1,241 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>未来规划 &mdash; Water Quality Retrieval 0.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="存在的问题" href="discussion.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Water Quality Retrieval
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="method.html">方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="result.html">结果</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discussion.html">存在的问题</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">未来规划</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">根据城市进行预测</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.根据点的经纬度进行预测(完成)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shp">2.根据城市shp进行预测(进行中)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.根据城市名称进行预测</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">根据客户需求修改某些区域颜色</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Water Quality Retrieval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>未来规划</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/content/future_plan.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>未来规划<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>根据城市进行预测<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>1.根据点的经纬度进行预测(完成)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>根据点坐标匹配landsat景号，并对该景进行预测。</p>
+</div>
+<div class="section" id="shp">
+<h3>2.根据城市shp进行预测(进行中)<a class="headerlink" href="#shp" title="Permalink to this headline">¶</a></h3>
+<p>提供城市shp文件
+获取shp四至，对每个点对应的landsat图像进行预测（最大默认为四景）
+或者获取shp每个点坐标，对其对应landsat图像进行预测
+最后将预测tif渲染融合，利用城市shp裁截出所需要的区域</p>
+</div>
+<div class="section" id="id4">
+<h3>3.根据城市名称进行预测<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>需要建立城市名称和对应shp的表或者数据库。</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>需要考虑到预测效率问题，如果过大的范围预测一个城市可能需要几个小时甚至一天的时间。预测方法可能需要进一步改进</p>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>根据客户需求修改某些区域颜色<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>现阶段可以应用到正常大小的图片上，但是由于遥感图像太大，无法直接利用内存显示并画出ROI。后续
+考虑可能将图像分块，先将水域所属块提取出来</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="discussion.html" class="btn btn-neutral float-left" title="存在的问题" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, sil
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

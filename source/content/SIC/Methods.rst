@@ -27,7 +27,7 @@ Basically includes the following steps:
 
 #. Generating training samples and put into CNN model
 
-    .. figure:: ./images/CNN_flow.png
+    .. figure:: ./images/cnn_flow.png
         :width: 600px
         :align: center
 
